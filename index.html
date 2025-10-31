@@ -1,326 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Md. Rabbi Hossain Tamal - Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Md. Rabbi Hossain Tamal | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --max-width:1200px;
+}
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0f1724,#1e293b);background-size:400% 400%;animation:gradientBG 15s ease infinite;color:#fff;overflow-x:hidden;line-height:1.6;position:relative;transition:background 0.5s, color 0.5s;}
+a{text-decoration:none;color:inherit}
 
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+/* Animated Gradient Background */
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
 
-    :root {
-      --bg: #f4f7fa;
-      --text: #222;
-      --accent: #4CAF50;
-      --card: #fff;
-      --shadow: rgba(0,0,0,0.1);
-    }
+/* Bubble Background */
+.bubbles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.bubble{position:absolute;border-radius:50%;animation:bubbleMove 20s linear infinite;opacity:0.6;}
+@keyframes bubbleMove{0%{transform:translateY(100vh) scale(0.5);}50%{transform:translateY(50vh) scale(1);}100%{transform:translateY(-10vh) scale(0.5);}}
 
-    body.dark-mode {
-      --bg: #121212;
-      --text: #e2e2e2;
-      --accent: #00bfff;
-      --card: #1e1e1e;
-      --shadow: rgba(0,0,0,0.5);
-    }
+/* Container */
+.container{max-width:var(--max-width);margin:auto;padding:20px;position:relative;z-index:1}
 
-    /* ===== Full Body Gradient + Bubble Background ===== */
-    body {
-      background: linear-gradient(-45deg, #ff6ec4, #7873f5, #42e695, #3bb2b8);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      color: var(--text);
-      transition: 0.3s;
-      min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
-    }
+/* Header */
+header{display:flex;justify-content:space-between;align-items:center;padding:10px 0;position:sticky;top:0;background:rgba(15,23,36,0.85);backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid rgba(255,255,255,0.05);}
+.logo{font-size:28px;font-weight:700;background:linear-gradient(135deg,#f97316,#06b6d4);-webkit-background-clip:text;background-clip:text;color:transparent;cursor:pointer;}
+nav a{margin-left:16px;font-weight:500;color:rgba(255,255,255,0.7);padding:6px 12px;border-radius:8px;transition:0.3s}
+nav a:hover{background:rgba(255,255,255,0.1);color:#fff}
+.btn-download{border:1px solid rgba(255,255,255,0.7);padding:6px 12px;border-radius:8px;color:rgba(255,255,255,0.7);margin-left:16px;transition:0.3s}
+.btn-download:hover{background:linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);color:#fff;border-color:transparent;animation:btnGradient 3s ease infinite;}
+.theme-toggle{margin-left:16px;cursor:pointer;font-size:18px;color:rgba(255,255,255,0.7);transition:0.3s;}
+.theme-toggle:hover{color:#fff;}
 
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
+/* Buttons Gradient Animation */
+@keyframes btnGradient{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+.btn-primary{padding:10px 18px;border:none;border-radius:10px;background:linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);background-size:300% 300%;color:#fff;font-weight:600;cursor:pointer;transition:0.3s;animation:btnGradient 3s ease infinite;box-shadow:0 4px 10px rgba(0,0,0,0.3);}
+.btn-primary:hover{opacity:1;transform:scale(1.05);box-shadow:0 10px 20px rgba(0,0,0,0.5);}
+.btn-ghost{padding:10px 18px;border:1px solid rgba(255,255,255,0.7);border-radius:10px;background:transparent;color:rgba(255,255,255,0.7);font-weight:500;cursor:pointer;transition:0.3s;}
+.btn-ghost:hover{background:linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);color:#fff;border-color:transparent;transform:scale(1.05);box-shadow:0 10px 20px rgba(0,0,0,0.3);}
 
-    /* Bubble Styles */
-    .bubble-container {
-      position: fixed;
-      top:0; left:0;
-      width:100%; height:100%;
-      pointer-events:none;
-      overflow:hidden;
-      z-index:0;
-    }
+/* Hero */
+.hero{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin:40px 0;opacity:0;transform:translateY(30px);transition:1s;}
+.hero-left{flex:1;min-width:280px;padding-right:20px;}
+.hero-left h1{font-size:48px;line-height:1.1;margin-bottom:16px;}
+.hero-left h1 span{background:linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 4px 12px rgba(255,255,255,0.3);}
+.hero-left p{color:rgba(255,255,255,0.7);margin-bottom:20px;}
+.hero-left .cta{display:flex;gap:16px;flex-wrap:wrap;}
+.hero-right{flex:0 0 320px;min-width:260px;background:rgba(255,255,255,0.1);border-radius:16px;padding:20px;text-align:center;backdrop-filter:blur(12px);box-shadow:0 20px 40px rgba(0,0,0,0.5);opacity:0;transform:translateY(40px);transition:1s;}
+.profile-pic{width:120px;height:120px;border-radius:16px;background:linear-gradient(135deg,#f97316,#06b6d4);margin:auto;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:700;color:#fff;}
+.profile-right h2{margin-top:14px;font-weight:600;font-size:22px;}
+.profile-right p{color:rgba(255,255,255,0.7);font-size:14px;margin-top:6px;}
+.stats{display:flex;justify-content:center;gap:12px;margin-top:14px;}
+.stat{background:rgba(255,255,255,0.1);padding:8px 12px;border-radius:10px;font-weight:600;font-size:14px;}
 
-    .bubble {
-      position: absolute;
-      bottom: -100px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 50%;
-      animation: rise 12s linear infinite;
-    }
+/* Sections */
+section{margin:40px 0;opacity:0;transform:translateY(30px);transition:1s;}
+.section-title{font-size:24px;font-weight:600;margin-bottom:20px;background:linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);-webkit-background-clip:text;color:transparent;}
 
-    @keyframes rise {
-      0% { transform: translateY(0) scale(1); opacity: 0.4; }
-      50% { opacity: 0.8; }
-      100% { transform: translateY(-600px) scale(1.2); opacity: 0; }
-    }
+/* Cards */
+.card{background:rgba(255,255,255,0.1);padding:20px;border-radius:16px;backdrop-filter:blur(12px);margin-bottom:20px;box-shadow:0 20px 40px rgba(0,0,0,0.3);}
 
-    /* Header */
-    .header {
-      text-align:center;
-      padding:40px 15px;
-      color:#fff;
-      border-radius:15px;
-      margin:20px;
-      position: relative;
-      z-index: 2;
-    }
+/* Skills */
+.skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;}
+.skill{background:rgba(255,255,255,0.05);padding:8px 12px;border-radius:10px;font-weight:500;position:relative;overflow:hidden;cursor:pointer;transition:0.3s;}
+.skill::before{content:'';position:absolute;left:0;top:0;height:100%;width:0%;background:linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);transition:0.5s;z-index:0;}
+.skill:hover::before{width:100%;}
+.skill span{position:relative;z-index:1;}
 
-    .header h1 { font-size:28px; margin-bottom:5px; font-weight:700; }
-    .tagline { font-size:16px; opacity:0.9; }
-    .button {
-      position:absolute; top:20px; right:20px;
-      padding:10px; border:none; border-radius:10px; cursor:pointer;
-      font-size:16px; color:#fff; background: rgba(0,0,0,0.2);
-      transition:0.3s; z-index:3;
-    }
-    .button:hover { background: rgba(0,0,0,0.4); }
+/* Info Grid */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px;}
+.info-item{background:rgba(255,255,255,0.05);padding:12px;border-radius:10px;font-size:14px;}
 
-    /* Tabs */
-    .tabs {
-      display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:20px; position:relative; z-index:2;
-    }
-    .tab-btn {
-      background: var(--card);
-      color: var(--accent);
-      padding:10px 20px;
-      border-radius:25px;
-      border:2px solid var(--accent);
-      cursor:pointer;
-      font-weight:500;
-      transition:0.3s;
-    }
-    .tab-btn.active, .tab-btn:hover { background: var(--accent); color:#fff; }
+/* Projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+.project{background:rgba(255,255,255,0.05);padding:14px;border-radius:12px;transition:0.5s ease;position:relative;box-shadow:0 6px 20px rgba(0,0,0,0.3);}
+.project:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 20px 40px rgba(255,255,255,0.3),0 0 20px rgba(0,255,255,0.2);}
+.project a.view-link{position:absolute;top:10px;right:10px;background:linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);padding:6px 10px;border-radius:8px;font-size:12px;color:#fff;opacity:0;transition:0.3s;}
+.project:hover a.view-link{opacity:1;}
 
-    .tab-content {
-      display:none;
-      background: var(--card);
-      padding:25px;
-      border-radius:15px;
-      box-shadow:0 8px 25px var(--shadow);
-      animation: fadeIn 0.5s ease;
-      margin:0 20px 20px 20px;
-      position:relative;
-      z-index:2;
-    }
-    .tab-content.active { display:block; }
+/* Contact */
+.contact{font-size:16px;}
+.contact a{color:rgba(255,255,255,0.7);transition:0.3s;}
+.contact a:hover{color:#06b6d4;}
+.socials a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.05);color:#fff;transition:0.3s;}
+.socials a:hover{box-shadow:0 0 10px #f97316,0 0 20px #facc15,0 0 30px #4ade80,0 0 40px #06b6d4,0 0 50px #8b5cf6;transform:scale(1.1);}
 
-    @keyframes fadeIn { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+/* Footer */
+footer{text-align:center;color:rgba(255,255,255,0.7);margin-top:50px;font-size:14px;}
 
-    .profile { text-align:center; }
-    .profile-pic { width:140px; height:140px; border-radius:25px; object-fit:cover; border:4px solid var(--accent); transition:0.5s; }
-    .profile-pic:hover { transform: scale(1.1) rotate(-5deg); }
-
-    .contact p { margin:5px 0; font-weight:500; }
-    .contact a { color:var(--accent); text-decoration:none; }
-    .contact a:hover { color:#2E7D32; }
-
-    .socials { margin-top:15px; }
-    .icon-box {
-      width:45px; height:45px; display:inline-flex; align-items:center; justify-content:center;
-      border-radius:8px; margin:5px; color:#fff; font-size:18px; transition:0.3s;
-    }
-    .icon-box.linkedin { background:#0a66c2; }
-    .icon-box.github { background:#333; }
-    .icon-box.facebook { background:#1877f2; }
-    .icon-box.instagram { background:#e1306c; }
-    .icon-box.pinterest { background:#e60023; }
-    .icon-box.whatsapp { background:#25d366; }
-    .icon-box.twitter { background:#282e28; }
-    .icon-box:hover { transform: scale(1.2) rotate(-5deg); box-shadow:0 6px 15px var(--shadow); }
-
-    .download-btn { display:inline-block; padding:10px 20px; margin-top:10px; background-color:var(--accent); color:#fff; border-radius:10px; text-decoration:none; font-weight:500; transition:0.3s; }
-    .download-btn:hover { background-color:#000; }
-
-    .section h2 { color:var(--accent); margin-bottom:10px; border-bottom:2px solid var(--accent); padding-bottom:5px; }
-
-    ul { list-style-type:square; padding-left:20px; line-height:1.7; }
-    p { line-height:1.6; }
-
-    footer { text-align:center; padding:15px; font-size:12px; opacity:0.7; margin-top:10px; position:relative; z-index:2; }
-
-    /* Responsive */
-    @media(max-width:768px){ .profile-pic{width:100px;height:100px;} .tab-btn{padding:8px 12px;font-size:14px;} }
-    @media(max-width:480px){ .header h1{font-size:22px;} .tagline{font-size:14px;} .tab-content{padding:15px;} }
-  </style>
+/* Responsive */
+@media(max-width:900px){
+  .hero{flex-direction:column;}
+  .hero-left{padding-right:0;text-align:center;}
+  .hero-right{margin-top:20px;}
+}
+</style>
 </head>
 <body>
-  <!-- Bubble Container -->
-  <div class="bubble-container" id="bubble-container"></div>
+<div class="bubbles" id="bubbles"></div>
+<div class="container">
+<header>
+  <div class="logo" onclick="scrollToSection('hero')">RHT</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <button class="btn-download" onclick="alert('Add CV link')">Download CV</button>
+    <i class="fas fa-adjust theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode"></i>
+  </nav>
+</header>
 
-  <header class="header">
-    <h1>Md. Rabbi Hossain Tamal</h1>
-    <p class="tagline">CSE Student | Aspiring Software Developer</p>
-    <button id="theme-toggle" class="button"><i class="fa-solid fa-moon"></i> Theme</button>
-  </header>
-
-  <!-- Tabs -->
-  <div class="tabs">
-    <button class="tab-btn active" data-tab="profile">Profile</button>
-    <button class="tab-btn" data-tab="personal">Personal Info</button>
-    <button class="tab-btn" data-tab="career">Career Objective</button>
-    <button class="tab-btn" data-tab="education">Education</button>
-    <button class="tab-btn" data-tab="skills">Skills</button>
-    <button class="tab-btn" data-tab="projects">Projects</button>
-    <button class="tab-btn" data-tab="languages">Languages</button>
+<!-- HERO -->
+<div class="hero" id="hero">
+  <div class="hero-left">
+    <h1>Hi — I'm <span>Md. Rabbi Hossain Tamal</span></h1>
+    <p>CSE student at IUBAT | MERN Developer | Building modern web apps & databases.</p>
+    <div class="cta">
+      <button class="btn-primary" onclick="scrollToSection('projects')">Projects</button>
+      <button class="btn-ghost" onclick="scrollToSection('contact')">Hire Me</button>
+    </div>
   </div>
-
-  <!-- Tab Contents -->
-  <div id="profile" class="tab-content active">
-    <section class="profile">
-      <img src="profile.jpg" alt="Md. Rabbi Hossain Tamal" class="profile-pic">
-      <div class="contact">
-        <p>📞 +8801732367040</p>
-        <p>✉️ <a href="mailto:rhtomal00001@gmail.com">rhtomal00001@gmail.com</a></p>
-        <div class="socials">
-          <a href="https://www.linkedin.com/in/md-rabbi-hossain-tamal" target="_blank" class="icon-box linkedin"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/rabbihossaintamal" target="_blank" class="icon-box github"><i class="fab fa-github"></i></a>
-          <a href="https://wa.me/8801732367040" target="_blank" class="icon-box whatsapp"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://facebook.com/rabbihossaintamal" target="_blank" class="icon-box facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://instagram.com/charlie.ll.69" target="_blank" class="icon-box instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://pinterest.com/charlie23303383" target="_blank" class="icon-box pinterest"><i class="fab fa-pinterest-p"></i></a>
-          <a href="https://twitter.com/rhrabbi00001" target="_blank" class="icon-box twitter"><i class="fab fa-twitter"></i></a>
-        </div>
-        <div style="margin-top:20px; text-align:center;">
-          <p style="font-weight:500; margin-bottom:8px; color:var(--accent);">👇 Click below to download my CV</p>
-          <a href="cv.pdf" download class="download-btn">Download CV PDF</a>
-        </div>
+  <div class="hero-right" id="hero-right">
+    <div class="profile-pic">R</div>
+    <div class="profile-right">
+      <h2>Md. Rabbi Hossain Tamal</h2>
+      <p>CSE Student (IUBAT) | MERN Developer</p>
+      <div class="stats">
+        <div class="stat">8+ Projects</div>
+        <div class="stat">2+ Years Exp</div>
       </div>
-    </section>
+      <p style="margin-top:10px;">📞 +8801732367040<br>✉️ rhtomal00001@gmail.com</p>
+    </div>
   </div>
+</div>
 
-  <div id="personal" class="tab-content">
-    <section class="section">
-      <h2>Personal Information</h2>
-      <ul>
-        <li><strong>Full Name:</strong> Md. Rabbi Hossain Tamal</li>
-        <li><strong>Father’s Name:</strong> Md. Mostofa Pramanik</li>
-        <li><strong>Mother’s Name:</strong> Most. Esmotara</li>
-        <li><strong>Date of Birth:</strong> 01 August 2003</li>
-        <li><strong>Gender:</strong> Male</li>
-        <li><strong>Religion:</strong> Islam</li>
-        <li><strong>Blood Group:</strong> A+</li>
-        <li><strong>Height:</strong> 5 Feet 5 Inches</li>
-        <li><strong>Weight:</strong> 55 Kg</li>
-        <li><strong>National ID No:</strong> ********4655</li>
-        <li><strong>Present Address:</strong> Sector 10, Uttara, Dhaka</li>
-        <li><strong>Permanent Address:</strong> Ramchandrapur, Harirampur (5740), Gobindaganj, Gaibandha</li>
-      </ul>
-    </section>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-title">About Me</div>
+  <div class="card">
+    <p>I am a motivated CSE student at IUBAT with hands-on experience building database-backed applications and front-end projects. I enjoy coding, learning new technologies and creating efficient solutions.</p>
+    <div class="skills">
+      <div class="skill"><span>C</span></div>
+      <div class="skill"><span>C++</span></div>
+      <div class="skill"><span>Python</span></div>
+      <div class="skill"><span>JavaScript</span></div>
+      <div class="skill"><span>HTML</span></div>
+      <div class="skill"><span>CSS</span></div>
+      <div class="skill"><span>React</span></div>
+      <div class="skill"><span>Node.js</span></div>
+      <div class="skill"><span>MySQL</span></div>
+      <div class="skill"><span>MongoDB</span></div>
+    </div>
   </div>
+</section>
 
-  <div id="career" class="tab-content">
-    <section class="section">
-      <h2>Career Objective</h2>
-      <p>Motivated CSE student at IUBAT seeking opportunities in software development and IT. Aiming to leverage programming, database, and web development skills to contribute effectively in a professional environment.</p>
-    </section>
+<!-- GENERAL INFO -->
+<section id="general-info">
+  <div class="section-title">General Information</div>
+  <div class="info-grid">
+    <div class="info-item"><strong>Name</strong><br>Md. Rabbi Hossain Tamal</div>
+    <div class="info-item"><strong>Father</strong><br>Md. Mostofa Pramanik</div>
+    <div class="info-item"><strong>Mother</strong><br>Most. Esmotara</div>
+    <div class="info-item"><strong>Phone</strong><br>01732367040</div>
+    <div class="info-item"><strong>Email</strong><br>rhtomal00001@gmail.com</div>
+    <div class="info-item"><strong>NID</strong><br>2862864655</div>
+    <div class="info-item"><strong>DOB</strong><br>01 August 2003</div>
+    <div class="info-item"><strong>Gender</strong><br>Male</div>
+    <div class="info-item"><strong>Blood</strong><br>A+</div>
+    <div class="info-item"><strong>Height</strong><br>5'5"</div>
+    <div class="info-item"><strong>Weight</strong><br>55 KG</div>
+    <div class="info-item"><strong>Religion</strong><br>Islam</div>
   </div>
+</section>
 
-  <div id="education" class="tab-content">
-    <section class="section">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>B.Sc. CSE:</strong> IUBAT | Running</li>
-        <li><strong>H.S.C:</strong> Islamia Govt. College, Sirajganj | 2021 | GPA: 5.00</li>
-        <li><strong>S.S.C:</strong> Qaumi Jute Mills High School | 2019 | GPA: 5.00</li>
-        <li><strong>J.S.C:</strong> Qaumi Jute Mills High School | 2016 | GPA: 4.80</li>
-      </ul>
-    </section>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-title">Projects</div>
+  <div class="projects">
+    <div class="project">
+      <strong>Food Ordering System</strong>
+      <p>MySQL-based restaurant management system with order tracking.</p>
+      <a href="#" class="view-link">View</a>
+    </div>
+    <div class="project">
+      <strong>Student Management System</strong>
+      <p>Python & MySQL based student record system.</p>
+      <a href="#" class="view-link">View</a>
+    </div>
+    <div class="project">
+      <strong>Portfolio Website</strong>
+      <p>Modern responsive portfolio built with HTML, CSS & JS.</p>
+      <a href="#" class="view-link">View</a>
+    </div>
   </div>
+</section>
 
-  <div id="skills" class="tab-content">
-    <section class="section">
-      <h2>Skills</h2>
-      <ul>
-        <li>Programming: C, C++, Python, JavaScript</li>
-        <li>Database: MySQL, DBMS</li>
-        <li>Web Development: HTML, CSS</li>
-        <li>Tools: MS Word, Excel, PowerPoint</li>
-        <li>Soft Skills: Teamwork, Communication, Problem Solving, Time Management</li>
-      </ul>
-    </section>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-title">Contact Me</div>
+  <div class="card">
+    <div class="contact" style="text-align:center;">
+      <p>📞 +8801732367040</p>
+      <p>✉️ <a href="mailto:rhtomal00001@gmail.com">rhtomal00001@gmail.com</a></p>
+      <div class="socials" style="display:flex;justify-content:center;gap:12px;margin-top:12px;">
+        <a href="https://www.linkedin.com/in/md-rabbi-hossain-tamal" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/rabbihossaintamal" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://wa.me/8801732367040" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://facebook.com/rabbihossaintamal" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/charlie.ll.69" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://pinterest.com/charlie23303383" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://twitter.com/rhrabbi00001" target="_blank"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div id="projects" class="tab-content">
-    <section class="section">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Food Ordering System:</strong> MySQL-based restaurant management system with order tracking.</li>
-        <li><strong>Student Management System:</strong> Built using Python & MySQL.</li>
-        <li><strong>Portfolio Website:</strong> Created using HTML, CSS & JS.</li>
-      </ul>
-    </section>
-  </div>
+<footer>© <span id="yr"></span> Md. Rabbi Hossain Tamal. All rights reserved.</footer>
+</div>
 
-  <div id="languages" class="tab-content">
-    <section class="section">
-      <h2>Languages</h2>
-      <p>Bangla – Native | English – Good | Hindi – Good</p>
-    </section>
-  </div>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
 
-  <footer>© 2025 Md. Rabbi Hossain Tamal | All Rights Reserved</footer>
+function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
 
-  <script>
-    // Create bubbles
-    const bubbleContainer = document.getElementById("bubble-container");
-    for(let i=0;i<30;i++){
-      const bubble = document.createElement("div");
-      const size = Math.random()*60 + 10;
-      bubble.classList.add("bubble");
-      bubble.style.width = size + "px";
-      bubble.style.height = size + "px";
-      bubble.style.left = Math.random()*100 + "%";
-      bubble.style.animationDuration = (8 + Math.random()*8) + "s";
-      bubble.style.animationDelay = Math.random()*5 + "s";
-      bubbleContainer.appendChild(bubble);
+// Bubble background
+const bubblesContainer = document.getElementById('bubbles');
+for(let i=0;i<40;i++){
+  const bubble = document.createElement('div');
+  bubble.className='bubble';
+  bubble.style.setProperty('--i', i);
+  const size=Math.random()*40+10;
+  bubble.style.width=size+'px';
+  bubble.style.height=size+'px';
+  bubble.style.left=Math.random()*100+'vw';
+  bubble.style.animationDuration=(Math.random()*20+10)+'s';
+  bubble.style.animationDelay=Math.random()*10+'s';
+  bubble.style.background=`hsla(${i*36},70%,60%,0.5)`;
+  bubble.style.boxShadow=`0 0 12px hsla(${i*36},70%,60%,0.8)`;
+  bubblesContainer.appendChild(bubble);
+}
+
+// Scroll-trigger animation
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.opacity='1';
+      entry.target.style.transform='translateY(0)';
+      observer.unobserve(entry.target);
     }
+  });
+},{threshold:0.2});
 
-    // Dark/light toggle
-    const themeToggle = document.getElementById("theme-toggle");
-    const savedTheme = localStorage.getItem("theme");
-    if(savedTheme==="dark"){ document.body.classList.add("dark-mode"); themeToggle.innerHTML='<i class="fa-solid fa-sun"></i> Theme'; }
-    themeToggle.addEventListener("click",()=>{
-      document.body.classList.toggle("dark-mode");
-      const current = document.body.classList.contains("dark-mode")?"dark":"light";
-      localStorage.setItem("theme",current);
-      themeToggle.innerHTML = current==="dark"?'<i class="fa-solid fa-sun"></i> Theme':'<i class="fa-solid fa-moon"></i> Theme';
-    });
+document.querySelectorAll('.hero, .hero-right, section').forEach(el=>observer.observe(el));
 
-    // Tabs switch
-    const tabs = document.querySelectorAll(".tab-btn");
-    const contents = document.querySelectorAll(".tab-content");
-    tabs.forEach(btn=>{
-      btn.addEventListener("click",()=>{
-        tabs.forEach(t=>t.classList.remove("active"));
-        btn.classList.add("active");
-        const target = btn.dataset.tab;
-        contents.forEach(c=>{ c.classList.remove("active"); if(c.id===target)c.classList.add("active"); });
-      });
-    });
-
-    // Optional: Download alert
-    const downloadBtn = document.querySelector(".download-btn");
-    downloadBtn.addEventListener("click", () => {
-      alert("Your CV download will start now!");
-    });
-  </script>
+// Theme Toggle
+const toggleBtn=document.getElementById('theme-toggle');
+toggleBtn.addEventListener('click',()=>{document.body.classList.toggle('dark');});
+</script>
 </body>
 </html>
