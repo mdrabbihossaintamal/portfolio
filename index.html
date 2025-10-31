@@ -37,7 +37,7 @@ header{display:flex;justify-content:space-between;align-items:center;padding:10p
 .logo{font-size:28px;font-weight:700;background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent;cursor:pointer;}
 nav a{margin-left:16px;font-weight:500;color:rgba(255,255,255,0.7);padding:6px 12px;border-radius:8px;transition:0.3s}
 nav a:hover{background:rgba(255,255,255,0.1);color:#fff}
-.btn-download{border:1px solid rgba(255,255,255,0.7);font-weight: bold; padding:6px 12px;border-radius:8px;color:black;margin-left:16px;transition:0.3s}
+.btn-download{border:1px solid rgba(255,255,255,0.7);font-weight: bold; padding:6px 12px;border-radius:8px;color:rgb(245, 245, 245);margin-left:16px;transition:0.3s}
 .btn-download:hover{background:var(--gradient);color:#fff;border-color:transparent;animation:btnGradient 3s ease infinite;}
 .theme-toggle{margin-left:16px;cursor:pointer;font-size:18px;color:rgba(255,255,255,0.7);transition:0.3s;}
 .theme-toggle:hover{color:#fff;}
@@ -145,7 +145,8 @@ footer{text-align:center;color:rgba(255,255,255,0.7);margin-top:50px;font-size:1
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
-    <button class="btn-download" onclick="alert('Add CV link')">Download CV</button>
+    <!-- Download CV button updated -->
+    <a href="cv.pdf" download class="btn-download">Download CV</a>
     <i class="fas fa-adjust theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode"></i>
   </nav>
 </header>
@@ -302,4 +303,3 @@ toggleBtn.addEventListener('click',()=>{document.body.classList.toggle('dark');}
 </script>
 </body>
 </html>
-
