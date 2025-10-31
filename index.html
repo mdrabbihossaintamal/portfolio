@@ -60,7 +60,29 @@ nav a:hover{background:rgba(255,255,255,0.1);color:#fff}
 .hero-left p{color:rgba(255,255,255,0.7);margin-bottom:20px;}
 .hero-left .cta{display:flex;gap:16px;flex-wrap:wrap;}
 .hero-right{flex:0 0 320px;min-width:260px;background:rgba(255,255,255,0.1);border-radius:16px;padding:20px;text-align:center;backdrop-filter:blur(12px);box-shadow:0 20px 40px rgba(0,0,0,0.5);opacity:0;transform:translateY(40px);transition:1s;}
-.profile-pic{width:120px;height:120px;border-radius:16px;background:linear-gradient(135deg,#f97316,#06b6d4);margin:auto;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:700;color:#fff;}
+
+/* Profile Picture */
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 3px; /* border thickness */
+  background: linear-gradient(135deg,#f97316,#06b6d4,#8b5cf6);
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .profile-right h2{margin-top:14px;font-weight:600;font-size:22px;}
 .profile-right p{color:rgba(255,255,255,0.7);font-size:14px;margin-top:6px;}
 .stats{display:flex;justify-content:center;gap:12px;margin-top:14px;}
@@ -94,7 +116,7 @@ section{margin:40px 0;opacity:0;transform:translateY(30px);transition:1s;}
 /* Contact */
 .contact{font-size:16px;}
 .contact a{color:rgba(255,255,255,0.7);transition:0.3s;}
-.contact a:hover{color:#06b6d4;}
+.contact a:hover{color:#facc15;}
 .socials a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.05);color:#fff;transition:0.3s;}
 .socials a:hover{box-shadow:0 0 10px #f97316,0 0 20px #facc15,0 0 30px #4ade80,0 0 40px #06b6d4,0 0 50px #8b5cf6;transform:scale(1.1);}
 
@@ -134,7 +156,9 @@ footer{text-align:center;color:rgba(255,255,255,0.7);margin-top:50px;font-size:1
     </div>
   </div>
   <div class="hero-right" id="hero-right">
-    <div class="profile-pic">R</div>
+    <div class="profile-pic">
+      <img src="images/profile.jpg" alt="Md. Rabbi Hossain Tamal">
+    </div>
     <div class="profile-right">
       <h2>Md. Rabbi Hossain Tamal</h2>
       <p>CSE Student (IUBAT) | MERN Developer</p>
@@ -241,7 +265,6 @@ const bubblesContainer = document.getElementById('bubbles');
 for(let i=0;i<40;i++){
   const bubble = document.createElement('div');
   bubble.className='bubble';
-  bubble.style.setProperty('--i', i);
   const size=Math.random()*40+10;
   bubble.style.width=size+'px';
   bubble.style.height=size+'px';
