@@ -9,6 +9,7 @@
 <style>
 :root{
   --max-width:1200px;
+  --gradient: linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);
 }
 
 /* Reset */
@@ -33,11 +34,11 @@ a{text-decoration:none;color:inherit}
 
 /* Header */
 header{display:flex;justify-content:space-between;align-items:center;padding:10px 0;position:sticky;top:0;background:rgba(15,23,36,0.85);backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid rgba(255,255,255,0.05);}
-.logo{font-size:28px;font-weight:700;background:linear-gradient(135deg,#f97316,#06b6d4);-webkit-background-clip:text;background-clip:text;color:transparent;cursor:pointer;}
+.logo{font-size:28px;font-weight:700;background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent;cursor:pointer;}
 nav a{margin-left:16px;font-weight:500;color:rgba(255,255,255,0.7);padding:6px 12px;border-radius:8px;transition:0.3s}
 nav a:hover{background:rgba(255,255,255,0.1);color:#fff}
-.btn-download{border:1px solid rgba(255,255,255,0.7);padding:6px 12px;border-radius:8px;color:rgba(255,255,255,0.7);margin-left:16px;transition:0.3s}
-.btn-download:hover{background:linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);color:#fff;border-color:transparent;animation:btnGradient 3s ease infinite;}
+.btn-download{border:1px solid rgba(255,255,255,0.7);font-weight: bold; padding:6px 12px;border-radius:8px;color:black;margin-left:16px;transition:0.3s}
+.btn-download:hover{background:var(--gradient);color:#fff;border-color:transparent;animation:btnGradient 3s ease infinite;}
 .theme-toggle{margin-left:16px;cursor:pointer;font-size:18px;color:rgba(255,255,255,0.7);transition:0.3s;}
 .theme-toggle:hover{color:#fff;}
 
@@ -47,16 +48,16 @@ nav a:hover{background:rgba(255,255,255,0.1);color:#fff}
   50%{background-position:100% 50%;}
   100%{background-position:0% 50%;}
 }
-.btn-primary{padding:10px 18px;border:none;border-radius:10px;background:linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);background-size:300% 300%;color:#fff;font-weight:600;cursor:pointer;transition:0.3s;animation:btnGradient 3s ease infinite;box-shadow:0 4px 10px rgba(0,0,0,0.3);}
+.btn-primary{padding:10px 18px;border:none;border-radius:10px;background:var(--gradient);background-size:300% 300%;color:#fff;font-weight:600;cursor:pointer;transition:0.3s;animation:btnGradient 3s ease infinite;box-shadow:0 4px 10px rgba(0,0,0,0.3);}
 .btn-primary:hover{opacity:1;transform:scale(1.05);box-shadow:0 10px 20px rgba(0,0,0,0.5);}
 .btn-ghost{padding:10px 18px;border:1px solid rgba(255,255,255,0.7);border-radius:10px;background:transparent;color:rgba(255,255,255,0.7);font-weight:500;cursor:pointer;transition:0.3s;}
-.btn-ghost:hover{background:linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);color:#fff;border-color:transparent;transform:scale(1.05);box-shadow:0 10px 20px rgba(0,0,0,0.3);}
+.btn-ghost:hover{background:var(--gradient);color:#fff;border-color:transparent;transform:scale(1.05);box-shadow:0 10px 20px rgba(0,0,0,0.3);}
 
 /* Hero */
 .hero{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin:40px 0;opacity:0;transform:translateY(30px);transition:1s;}
 .hero-left{flex:1;min-width:280px;padding-right:20px;}
 .hero-left h1{font-size:48px;line-height:1.1;margin-bottom:16px;}
-.hero-left h1 span{background:linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 4px 12px rgba(255,255,255,0.3);}
+.hero-left h1 span{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 4px 12px rgba(255,255,255,0.3);}
 .hero-left p{color:rgba(255,255,255,0.7);margin-bottom:20px;}
 .hero-left .cta{display:flex;gap:16px;flex-wrap:wrap;}
 .hero-right{flex:0 0 320px;min-width:260px;background:rgba(255,255,255,0.1);border-radius:16px;padding:20px;text-align:center;backdrop-filter:blur(12px);box-shadow:0 20px 40px rgba(0,0,0,0.5);opacity:0;transform:translateY(40px);transition:1s;}
@@ -66,8 +67,8 @@ nav a:hover{background:rgba(255,255,255,0.1);color:#fff}
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  padding: 3px; /* border thickness */
-  background: linear-gradient(135deg,#f97316,#06b6d4,#8b5cf6);
+  padding: 3px;
+  background: var(--gradient);
   overflow: hidden;
   margin: auto;
   display: flex;
@@ -90,7 +91,7 @@ nav a:hover{background:rgba(255,255,255,0.1);color:#fff}
 
 /* Sections */
 section{margin:40px 0;opacity:0;transform:translateY(30px);transition:1s;}
-.section-title{font-size:24px;font-weight:600;margin-bottom:20px;background:linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);-webkit-background-clip:text;color:transparent;}
+.section-title{font-size:24px;font-weight:600;margin-bottom:20px;background:var(--gradient);-webkit-background-clip:text;color:transparent;}
 
 /* Cards */
 .card{background:rgba(255,255,255,0.1);padding:20px;border-radius:16px;backdrop-filter:blur(12px);margin-bottom:20px;box-shadow:0 20px 40px rgba(0,0,0,0.3);}
@@ -98,19 +99,23 @@ section{margin:40px 0;opacity:0;transform:translateY(30px);transition:1s;}
 /* Skills */
 .skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;}
 .skill{background:rgba(255,255,255,0.05);padding:8px 12px;border-radius:10px;font-weight:500;position:relative;overflow:hidden;cursor:pointer;transition:0.3s;}
-.skill::before{content:'';position:absolute;left:0;top:0;height:100%;width:0%;background:linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);transition:0.5s;z-index:0;}
+.skill::before{content:'';position:absolute;left:0;top:0;height:100%;width:0%;background:var(--gradient);transition:0.5s;z-index:0;}
 .skill:hover::before{width:100%;}
 .skill span{position:relative;z-index:1;}
 
-/* Info Grid */
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px;}
-.info-item{background:rgba(255,255,255,0.05);padding:12px;border-radius:10px;font-size:14px;}
+/* General Info Modern Card */
+.general-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;transition:0.5s;}
+.general-card .info-item{background:rgba(255,255,255,0.05);padding:14px;border-radius:12px;font-size:14px;position:relative;overflow:hidden;cursor:pointer;transition:0.3s;box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+.general-card .info-item::before{content:"";position:absolute;left:0;top:0;width:0;height:100%;background:var(--gradient);z-index:0;transition:0.4s;}
+.general-card .info-item:hover::before{width:100%;}
+.general-card .info-item span{position:relative;z-index:1;font-weight:600;}
+.general-card .info-item strong{position:relative;z-index:1;}
 
 /* Projects */
 .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
 .project{background:rgba(255,255,255,0.05);padding:14px;border-radius:12px;transition:0.5s ease;position:relative;box-shadow:0 6px 20px rgba(0,0,0,0.3);}
 .project:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 20px 40px rgba(255,255,255,0.3),0 0 20px rgba(0,255,255,0.2);}
-.project a.view-link{position:absolute;top:10px;right:10px;background:linear-gradient(90deg,#f97316,#facc15,#4ade80,#06b6d4,#8b5cf6);padding:6px 10px;border-radius:8px;font-size:12px;color:#fff;opacity:0;transition:0.3s;}
+.project a.view-link{position:absolute;top:10px;right:10px;background:var(--gradient);padding:6px 10px;border-radius:8px;font-size:12px;color:#fff;opacity:0;transition:0.3s;}
 .project:hover a.view-link{opacity:1;}
 
 /* Contact */
@@ -157,7 +162,7 @@ footer{text-align:center;color:rgba(255,255,255,0.7);margin-top:50px;font-size:1
   </div>
   <div class="hero-right" id="hero-right">
     <div class="profile-pic">
-      <img src="profile.jpg" alt="Md. Rabbi Hossain Tamal">
+      <img src="images/profile.jpg" alt="Md. Rabbi Hossain Tamal">
     </div>
     <div class="profile-right">
       <h2>Md. Rabbi Hossain Tamal</h2>
@@ -191,22 +196,24 @@ footer{text-align:center;color:rgba(255,255,255,0.7);margin-top:50px;font-size:1
   </div>
 </section>
 
-<!-- GENERAL INFO -->
+<!-- GENERAL INFO MODERN -->
 <section id="general-info">
   <div class="section-title">General Information</div>
-  <div class="info-grid">
-    <div class="info-item"><strong>Name</strong><br>Md. Rabbi Hossain Tamal</div>
-    <div class="info-item"><strong>Father</strong><br>Md. Mostofa Pramanik</div>
-    <div class="info-item"><strong>Mother</strong><br>Most. Esmotara</div>
-    <div class="info-item"><strong>Phone</strong><br>01732367040</div>
-    <div class="info-item"><strong>Email</strong><br>rhtomal00001@gmail.com</div>
-    <div class="info-item"><strong>NID</strong><br>2862864655</div>
-    <div class="info-item"><strong>DOB</strong><br>01 August 2003</div>
-    <div class="info-item"><strong>Gender</strong><br>Male</div>
-    <div class="info-item"><strong>Blood</strong><br>A+</div>
-    <div class="info-item"><strong>Height</strong><br>5'5"</div>
-    <div class="info-item"><strong>Weight</strong><br>55 KG</div>
-    <div class="info-item"><strong>Religion</strong><br>Islam</div>
+  <div class="card general-card">
+    <div class="info-item"><strong>Name:</strong> <span>Md. Rabbi Hossain Tamal</span></div>
+    <div class="info-item"><strong>Father:</strong> <span>Md. Mostofa Pramanik</span></div>
+    <div class="info-item"><strong>Mother:</strong> <span>Most. Esmotara</span></div>
+    <div class="info-item"><strong>Phone:</strong> <span>01732367040</span></div>
+    <div class="info-item"><strong>Email:</strong> <span>rhtomal00001@gmail.com</span></div>
+    <div class="info-item"><strong>NID:</strong> <span>2862864655</span></div>
+    <div class="info-item"><strong>DOB:</strong> <span>01 August 2003</span></div>
+    <div class="info-item"><strong>Gender:</strong> <span>Male</span></div>
+    <div class="info-item"><strong>Blood:</strong> <span>A+</span></div>
+    <div class="info-item"><strong>Height:</strong> <span>5'5"</span></div>
+    <div class="info-item"><strong>Weight:</strong> <span>55 KG</span></div>
+    <div class="info-item"><strong>Religion:</strong> <span>Islam</span></div>
+    <div class="info-item"><strong>Present Address:</strong> <span> <br> Rangpur, Gaibandha, Gobindaganj, Horirampur (5740), Harirampur Union, Ward 5, Ramchandrapur</span></div>
+    <div class="info-item"><strong>Permanent Address:</strong> <span> <br>Dhaka, Uttara, Sector 10 </span></div>
   </div>
 </section>
 
@@ -295,4 +302,3 @@ toggleBtn.addEventListener('click',()=>{document.body.classList.toggle('dark');}
 </script>
 </body>
 </html>
-
